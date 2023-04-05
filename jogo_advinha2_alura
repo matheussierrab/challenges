@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo da adivinhação</title>
+</head>
+<body>
+    
+    <h1>Advinhe o valor em que a máquina está pensando, sendo ele um valor de 0 a 10</h1>
+
+    <input/>
+    <button>Compare com o meu segredo</button>
+
+    <script>
+
+    function mostra(frase) {
+        document.write(frase);
+        document.write("<br>")
+    }
+
+	var segredo = Math.round(Math.random() * 10);
+
+	var input = document.querySelector("input");
+    input.focus();
+
+	function verifica() {   
+        if (input.value >= 11) {
+            mostra("Erro, digite um valor que seja menor ou igual a 10")
+        } else {
+            if (input.value == segredo) {
+			    mostra("Você acertou! Muito bem!"); 
+                
+		    } else {
+		    	mostra("Você errou! O valor correto era: " + segredo);
+		    }
+		    input.value = ""; 
+		    input.focus(); 
+            }
+	    }
+	
+	var button = document.querySelector("button");
+    button.onclick = verifica;
+
+    </script>
+
+</body>
+</html>
