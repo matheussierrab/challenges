@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSOR DE GB</title>
+</head>
+<body>
+
+    <h1>Informe aqui a quantidades de GB que deseja transformar em MB.</h1>
+
+    <input/>
+    <button>Iniciar conversão</button>
+
+    <script>
+
+        function mostra(frase) {
+            document.write("<br>");
+            document.write(frase); 
+        }
+
+        var input = document.querySelector("input"); 
+        input.focus()
+        
+        function iniciar() {
+            if (input.value <= 0) {
+                alert("ERRO")
+            }
+            if (input.value >= 0.1 && input.value <= 0.9) {
+                var conversao = input.value * 102.4
+                mostra(input.value + " GB é igual a " + conversao.toFixed(2) + " MB")
+            } 
+            if (input.value >= 1) {
+                var conversao = input.value * 1024;
+                mostra(input.value + " GB é igual a " + conversao + " MB"); 
+            }
+            input.value = "";
+            input.focus();
+        }
+
+        var button = document.querySelector("button");
+        button.onclick = iniciar;
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+                
